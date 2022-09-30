@@ -1,0 +1,3 @@
+:root {
+    --loading-color: var(--accent-color, #000000);
+}
