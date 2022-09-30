@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2022-09-30-2
+
+Changes:
+
+- Loading size css variable
+
 ## v2022-09-30-1
 
 Changes:
