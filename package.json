@@ -1,0 +1,12 @@
+{
+    "name": "flux-loading-api",
+    "productName": "flux-loading-api",
+    "version": "2022-09-30-1",
+    "description": "",
+    "keywords": [],
+    "homepage": "",
+    "peerDependencies": {
+        "flux-css-api": "*"
+    },
+    "private": true
+}
