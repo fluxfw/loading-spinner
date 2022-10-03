@@ -1,4 +1,4 @@
-import { CssApi } from "../../../../flux-css-api/src/Adapter/Api/CssApi.mjs";
+/** @typedef {import("../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
 
 const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
 

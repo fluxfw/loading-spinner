@@ -1,6 +1,7 @@
-import { CssApi } from "../../../../../flux-css-api/src/Adapter/Api/CssApi.mjs";
 import { GetLoadingElementCommand } from "../Command/GetLoadingElementCommand.mjs";
-import { LoadingElement } from "../../../Adapter/Loading/LoadingElement.mjs";
+
+/** @typedef {import("../../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
+/** @typedef {import("../../../Adapter/Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
 
 export class LoadingService {
     /**
