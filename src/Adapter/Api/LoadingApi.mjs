@@ -1,6 +1,7 @@
-import { CssApi } from "../../../../flux-css-api/src/Adapter/Api/CssApi.mjs";
-import { LoadingElement } from "../Loading/LoadingElement.mjs";
 import { LoadingService } from "../../Service/Loading/Port/LoadingService.mjs";
+
+/** @typedef {import("../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
+/** @typedef {import("../Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
 
 const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
 
