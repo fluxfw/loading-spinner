@@ -1,6 +1,7 @@
 import { LoadingService } from "../../Service/Loading/Port/LoadingService.mjs";
 
 /** @typedef {import("../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
+/** @typedef {import("../Loading/FullscreenLoadingElement.mjs").FullscreenLoadingElement} FullscreenLoadingElement */
 /** @typedef {import("../Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
 
 const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
@@ -43,6 +44,13 @@ export class LoadingApi {
             document,
             `${__dirname}/../Loading/LoadingVariables.css`
         );
+    }
+
+    /**
+     * @returns {FullscreenLoadingElement}
+     */
+    getFullscreenLoadingElement() {
+        return this.#loading_service.getFullscreenLoadingElement();
     }
 
     /**

@@ -1,0 +1,15 @@
+:host {
+    background-color: rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+flux-loading {
+    height: 100%;
+    width: 100%;
+}
