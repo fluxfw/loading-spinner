@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2022-10-05-1
+
+Changes:
+
+- Fullscreen loading
+
 ## v2022-10-03-1
 
 Changes:
