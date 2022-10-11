@@ -57,6 +57,6 @@ export class FullscreenLoadingElement extends HTMLElement {
     }
 }
 
-export const FULLSCREEN_LOADING_TAG_NAME = "flux-fullscreen-loading";
+export const FULLSCREEN_LOADING_ELEMENT_TAG_NAME = "flux-fullscreen-loading";
 
-customElements.define(FULLSCREEN_LOADING_TAG_NAME, FullscreenLoadingElement);
+customElements.define(FULLSCREEN_LOADING_ELEMENT_TAG_NAME, FullscreenLoadingElement);

@@ -39,6 +39,6 @@ export class LoadingElement extends HTMLElement {
     }
 }
 
-export const LOADING_TAG_NAME = "flux-loading";
+export const LOADING_ELEMENT_TAG_NAME = "flux-loading";
 
-customElements.define(LOADING_TAG_NAME, LoadingElement);
+customElements.define(LOADING_ELEMENT_TAG_NAME, LoadingElement);
