@@ -1,5 +1,5 @@
 :root {
-    --loading-color: var(--accent-color, #000000);
+    --loading-color: var(--color-scheme-accent, #000000);
     --loading-size: 20px;
     --loading-width: 1px;
 }
