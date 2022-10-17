@@ -1,8 +1,7 @@
-import { LoadingService } from "../../Service/Loading/Port/LoadingService.mjs";
-
 /** @typedef {import("../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
 /** @typedef {import("../Loading/FullscreenLoadingElement.mjs").FullscreenLoadingElement} FullscreenLoadingElement */
 /** @typedef {import("../Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
+/** @typedef {import("../../Service/Loading/Port/LoadingService.mjs").LoadingService} LoadingService */
 
 const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
 
@@ -38,7 +37,7 @@ export class LoadingApi {
      * @returns {Promise<void>}
      */
     async init() {
-        this.#loading_service ??= this.#getLoadingService();
+        this.#loading_service ??= await this.#getLoadingService();
 
         this.#css_api.importCssToRoot(
             document,
@@ -61,10 +60,10 @@ export class LoadingApi {
     }
 
     /**
-     * @returns {LoadingService}
+     * @returns {Promise<LoadingService>}
      */
-    #getLoadingService() {
-        return LoadingService.new(
+    async #getLoadingService() {
+        return (await import("../../Service/Loading/Port/LoadingService.mjs")).LoadingService.new(
             this.#css_api
         );
     }
