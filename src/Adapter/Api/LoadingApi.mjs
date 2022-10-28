@@ -37,8 +37,6 @@ export class LoadingApi {
      * @returns {Promise<void>}
      */
     async init() {
-        this.#loading_service ??= await this.#getLoadingService();
-
         this.#css_api.importCssToRoot(
             document,
             `${__dirname}/../Loading/LoadingVariables.css`
@@ -46,25 +44,27 @@ export class LoadingApi {
     }
 
     /**
-     * @returns {FullscreenLoadingElement}
+     * @returns {Promise<FullscreenLoadingElement>}
      */
-    getFullscreenLoadingElement() {
-        return this.#loading_service.getFullscreenLoadingElement();
+    async getFullscreenLoadingElement() {
+        return (await this.#getLoadingService()).getFullscreenLoadingElement();
     }
 
     /**
-     * @returns {LoadingElement}
+     * @returns {Promise<LoadingElement>}
      */
-    getLoadingElement() {
-        return this.#loading_service.getLoadingElement();
+    async getLoadingElement() {
+        return (await this.#getLoadingService()).getLoadingElement();
     }
 
     /**
      * @returns {Promise<LoadingService>}
      */
     async #getLoadingService() {
-        return (await import("../../Service/Loading/Port/LoadingService.mjs")).LoadingService.new(
+        this.#loading_service ??= (await import("../../Service/Loading/Port/LoadingService.mjs")).LoadingService.new(
             this.#css_api
         );
+
+        return this.#loading_service;
     }
 }

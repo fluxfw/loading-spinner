@@ -1,6 +1,5 @@
-import { FullscreenLoadingElement } from "../../../Adapter/Loading/FullscreenLoadingElement.mjs";
-
 /** @typedef {import("../../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
+/** @typedef {import("../../../Adapter/Loading/FullscreenLoadingElement.mjs").FullscreenLoadingElement} FullscreenLoadingElement */
 /** @typedef {import("../Port/LoadingService.mjs").LoadingService} LoadingService */
 
 export class GetFullscreenLoadingElementCommand {
@@ -36,12 +35,12 @@ export class GetFullscreenLoadingElementCommand {
     }
 
     /**
-     * @returns {FullscreenLoadingElement}
+     * @returns {Promise<FullscreenLoadingElement>}
      */
-    getFullscreenLoadingElement() {
-        return FullscreenLoadingElement.new(
+    async getFullscreenLoadingElement() {
+        return (await import("../../../Adapter/Loading/FullscreenLoadingElement.mjs")).FullscreenLoadingElement.new(
             this.#css_api,
-            this.#loading_service.getLoadingElement()
+            await this.#loading_service.getLoadingElement()
         );
     }
 }

@@ -1,6 +1,5 @@
-import { LoadingElement } from "../../../Adapter/Loading/LoadingElement.mjs";
-
 /** @typedef {import("../../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
+/** @typedef {import("../../../Adapter/Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
 
 export class GetLoadingElementCommand {
     /**
@@ -27,10 +26,10 @@ export class GetLoadingElementCommand {
     }
 
     /**
-     * @returns {LoadingElement}
+     * @returns {Promise<LoadingElement>}
      */
-    getLoadingElement() {
-        return LoadingElement.new(
+    async getLoadingElement() {
+        return (await import("../../../Adapter/Loading/LoadingElement.mjs")).LoadingElement.new(
             this.#css_api
         );
     }
