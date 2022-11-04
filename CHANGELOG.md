@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2022-11-04-1
+
+Changes:
+
+- Bigger fullscreen loading default size
+
 ## v2022-10-28-1
 
 Changes:

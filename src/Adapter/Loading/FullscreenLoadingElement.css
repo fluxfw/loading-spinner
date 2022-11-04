@@ -1,4 +1,6 @@
 :host {
+    --loading-size: 100px;
+    --loading-width: 2px;
     background-color: rgba(0, 0, 0, 0.2);
     bottom: 0;
     display: block;
