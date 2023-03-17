@@ -1,38 +1,38 @@
-/** @typedef {import("../../../../flux-css-api/src/Adapter/Api/CssApi.mjs").CssApi} CssApi */
+/** @typedef {import("../../../flux-css-api/src/FluxCssApi.mjs").FluxCssApi} FluxCssApi */
 
 const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
 
 export class LoadingElement extends HTMLElement {
     /**
-     * @type {CssApi}
+     * @type {FluxCssApi}
      */
-    #css_api;
+    #flux_css_api;
     /**
      * @type {ShadowRoot}
      */
     #shadow;
 
     /**
-     * @param {CssApi} css_api
+     * @param {FluxCssApi} flux_css_api
      * @returns {LoadingElement}
      */
-    static new(css_api) {
+    static new(flux_css_api) {
         return new this(
-            css_api
+            flux_css_api
         );
     }
 
     /**
-     * @param {CssApi} css_api
+     * @param {FluxCssApi} flux_css_api
      * @private
      */
-    constructor(css_api) {
+    constructor(flux_css_api) {
         super();
 
-        this.#css_api = css_api;
+        this.#flux_css_api = flux_css_api;
 
         this.#shadow = this.attachShadow({ mode: "closed" });
-        this.#css_api.importCssToRoot(
+        this.#flux_css_api.importCssToRoot(
             this.#shadow,
             `${__dirname}/${this.constructor.name}.css`
         );
