@@ -1,13 +1,14 @@
-/** @typedef {import("../../../flux-css-api/src/FluxCssApi.mjs").FluxCssApi} FluxCssApi */
+import { flux_css_api } from "../../../flux-css-api/src/FluxCssApi.mjs";
+
 /** @typedef {import("../Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
 
 const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
 
+const css = await flux_css_api.import(
+    `${__dirname}/FullscreenLoadingElement.css`
+);
+
 export class FullscreenLoadingElement extends HTMLElement {
-    /**
-     * @type {FluxCssApi}
-     */
-    #flux_css_api;
     /**
      * @type {LoadingElement}
      */
@@ -18,32 +19,28 @@ export class FullscreenLoadingElement extends HTMLElement {
     #shadow;
 
     /**
-     * @param {FluxCssApi} flux_css_api
      * @param {LoadingElement} loading_element
      * @returns {FullscreenLoadingElement}
      */
-    static new(flux_css_api, loading_element) {
+    static new(loading_element) {
         return new this(
-            flux_css_api,
             loading_element
         );
     }
 
     /**
-     * @param {FluxCssApi} flux_css_api
      * @param {LoadingElement} loading_element
      * @private
      */
-    constructor(flux_css_api, loading_element) {
+    constructor(loading_element) {
         super();
 
-        this.#flux_css_api = flux_css_api;
         this.#loading_element = loading_element;
 
         this.#shadow = this.attachShadow({ mode: "closed" });
-        this.#flux_css_api.importCssToRoot(
+        flux_css_api.adopt(
             this.#shadow,
-            `${__dirname}/${this.constructor.name}.css`
+            css
         );
 
         this.#render();
