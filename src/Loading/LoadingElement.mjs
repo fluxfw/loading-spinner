@@ -1,9 +1,15 @@
 import { flux_css_api } from "../../../flux-css-api/src/FluxCssApi.mjs";
 
-const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
+flux_css_api.adopt(
+    document,
+    await flux_css_api.import(
+        `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/LoadingVariables.css`
+    ),
+    true
+);
 
 const css = await flux_css_api.import(
-    `${__dirname}/LoadingElement.css`
+    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/LoadingElement.css`
 );
 
 export class LoadingElement extends HTMLElement {

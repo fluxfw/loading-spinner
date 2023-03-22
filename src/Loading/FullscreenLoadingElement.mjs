@@ -2,10 +2,8 @@ import { flux_css_api } from "../../../flux-css-api/src/FluxCssApi.mjs";
 
 /** @typedef {import("../Loading/LoadingElement.mjs").LoadingElement} LoadingElement */
 
-const __dirname = import.meta.url.substring(0, import.meta.url.lastIndexOf("/"));
-
 const css = await flux_css_api.import(
-    `${__dirname}/FullscreenLoadingElement.css`
+    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FullscreenLoadingElement.css`
 );
 
 export class FullscreenLoadingElement extends HTMLElement {
