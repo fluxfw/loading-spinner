@@ -6,6 +6,13 @@ Changes:
 
 \-
 
+## v2023-03-23-1
+
+Changes:
+
+- Renamed to `flux-loading-spinner`
+- Removed api
+
 ## v2023-03-22-1
 
 Changes:

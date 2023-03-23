@@ -1,19 +1,19 @@
 :host {
     align-items: center;
     display: flex;
-    height: calc(var(--loading-size) * 2);
+    height: calc(var(--flux-loading-spinner-size) * 2);
     justify-content: center;
     width: 100%;
 }
 
 :host::before {
     animation: loading 800ms infinite;
-    border-radius: var(--loading-size);
-    border-top: var(--loading-width) solid var(--loading-color);
+    border-radius: var(--flux-loading-spinner-size);
+    border-top: var(--flux-loading-spinner-width) solid var(--flux-loading-spinner-color);
     content: "";
     display: block;
-    height: var(--loading-size);
-    width: var(--loading-size);
+    height: var(--flux-loading-spinner-size);
+    width: var(--flux-loading-spinner-size);
 }
 
 @keyframes loading {

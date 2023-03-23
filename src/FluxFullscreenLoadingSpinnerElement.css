@@ -1,6 +1,6 @@
 :host {
-    --loading-size: 100px;
-    --loading-width: 2px;
+    --flux-loading-spinner-size: 100px;
+    --flux-loading-spinner-width: 2px;
     background-color: rgba(0, 0, 0, 0.2);
     bottom: 0;
     display: block;
@@ -11,7 +11,7 @@
     z-index: 2000;
 }
 
-flux-loading {
+flux-loading-spinner {
     height: 100%;
     width: 100%;
 }

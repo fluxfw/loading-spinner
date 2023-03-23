@@ -1,3 +1,3 @@
-# flux-loading-api
+# flux-loading-spinner
 
 Loading spinner
