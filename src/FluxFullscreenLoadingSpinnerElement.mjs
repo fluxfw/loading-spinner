@@ -19,7 +19,10 @@ export class FluxFullscreenLoadingSpinnerElement extends HTMLElement {
     constructor() {
         super();
 
-        const shadow = this.attachShadow({ mode: "closed" });
+        const shadow = this.attachShadow({
+            mode: "closed"
+        });
+
         flux_css_api.adopt(
             shadow,
             css
