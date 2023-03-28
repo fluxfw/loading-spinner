@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2023-03-28-1
+
+Changes:
+
+- Remove fullscreen loading (Replaced in `flux-overlay`)
+
 ## v2023-03-23-2
 
 Changes:
