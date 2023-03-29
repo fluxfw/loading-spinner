@@ -1,8 +1,10 @@
 :host {
     align-items: center;
     display: flex;
-    height: calc(var(--flux-loading-spinner-size) * 2);
+    height: calc(var(--flux-loading-spinner-size) * 1.2);
     justify-content: center;
+    max-height: 100%;
+    max-width: 100%;
     overflow: hidden;
     width: 100%;
 }
