@@ -1,12 +1,10 @@
 import { flux_css_api } from "../../flux-css-api/src/FluxCssApi.mjs";
 
-flux_css_api.adopt(
-    document,
-    await flux_css_api.import(
-        `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElementVariables.css`
-    ),
-    true
+const variables_css = await flux_css_api.import(
+    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElementVariables.css`
 );
+
+document.adoptedStyleSheets.unshift(variables_css);
 
 const css = await flux_css_api.import(
     `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElement.css`
@@ -30,10 +28,7 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
             mode: "closed"
         });
 
-        flux_css_api.adopt(
-            shadow,
-            css
-        );
+        shadow.adoptedStyleSheets.push(css);
     }
 }
 
