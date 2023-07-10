@@ -1,5 +1,5 @@
 :root {
-    --flux-loading-spinner-color: var(--flux-color-scheme-accent, #000000);
+    --flux-loading-spinner-color: var(--flux-color-scheme-accent-color, #000000);
     --flux-loading-spinner-size: 20px;
     --flux-loading-spinner-width: 1px;
 }

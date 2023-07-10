@@ -1,10 +1,10 @@
 import { flux_css_api } from "../../flux-css-api/src/FluxCssApi.mjs";
 
-const variables_css = await flux_css_api.import(
-    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElementVariables.css`
+const root_css = await flux_css_api.import(
+    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElementRoot.css`
 );
 
-document.adoptedStyleSheets.unshift(variables_css);
+document.adoptedStyleSheets.unshift(root_css);
 
 const css = await flux_css_api.import(
     `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElement.css`
