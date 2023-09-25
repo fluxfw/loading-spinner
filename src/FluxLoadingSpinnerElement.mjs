@@ -19,7 +19,7 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
      */
     static async new(style_sheet_manager = null) {
         if (style_sheet_manager !== null) {
-            await style_sheet_manager.generateVariableStyleSheet(
+            await style_sheet_manager.generateVariablesRootStyleSheet(
                 this.name,
                 {
                     [`${FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX}color`]: "accent-color"
@@ -27,7 +27,7 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
                 true
             );
 
-            await style_sheet_manager.addStyleSheet(
+            await style_sheet_manager.addRootStyleSheet(
                 root_css,
                 true
             );
@@ -37,7 +37,19 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
             }
         }
 
-        return new this();
+        const flux_loading_spinner_element = new this();
+
+        const shadow = flux_loading_spinner_element.attachShadow({
+            mode: "closed"
+        });
+
+        await style_sheet_manager.addStyleSheetsToShadow(
+            shadow
+        );
+
+        shadow.adoptedStyleSheets.push(css);
+
+        return flux_loading_spinner_element;
     }
 
     /**
@@ -45,12 +57,6 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
      */
     constructor() {
         super();
-
-        const shadow = this.attachShadow({
-            mode: "closed"
-        });
-
-        shadow.adoptedStyleSheets.push(css);
     }
 }
 

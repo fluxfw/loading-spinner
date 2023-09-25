@@ -6,6 +6,12 @@ Changes:
 
 \-
 
+## v2023-09-25-1
+
+Changes:
+
+- Supports shadow style sheets
+
 ## v2023-07-27-1
 
 Changes:
