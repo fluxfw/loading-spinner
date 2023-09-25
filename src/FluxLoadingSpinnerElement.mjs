@@ -43,7 +43,7 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
             mode: "closed"
         });
 
-        await style_sheet_manager.addStyleSheetsToShadow(
+        await style_sheet_manager?.addStyleSheetsToShadow(
             shadow
         );
 
