@@ -20,7 +20,7 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
     static async new(style_sheet_manager = null) {
         if (style_sheet_manager !== null) {
             await style_sheet_manager.generateVariablesRootStyleSheet(
-                this.name,
+                FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX,
                 {
                     [`${FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX}color`]: "accent-color"
                 },
