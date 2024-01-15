@@ -1,14 +1,7 @@
-import { flux_import_css } from "../../flux-style-sheet-manager/src/FluxImportCss.mjs";
+import css from "./FluxLoadingSpinnerElement.css" with { type: "css" };
+import root_css from "./FluxLoadingSpinnerElementRoot.css" with { type: "css" };
 
 /** @typedef {import("./StyleSheetManager/StyleSheetManager.mjs").StyleSheetManager} StyleSheetManager */
-
-const root_css = await flux_import_css.import(
-    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElementRoot.css`
-);
-
-const css = await flux_import_css.import(
-    `${import.meta.url.substring(0, import.meta.url.lastIndexOf("/"))}/FluxLoadingSpinnerElement.css`
-);
 
 export const FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX = "--flux-loading-spinner-";
 
