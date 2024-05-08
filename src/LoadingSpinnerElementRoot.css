@@ -1,0 +1,5 @@
+:root, :host {
+    --loading-spinner-color: #000000;
+    --loading-spinner-size: 20px;
+    --loading-spinner-width: 1px;
+}

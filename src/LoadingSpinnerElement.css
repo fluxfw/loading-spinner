@@ -1,7 +1,7 @@
 :host {
     align-items: center;
     display: flex;
-    height: calc(var(--flux-loading-spinner-size) * 1.2);
+    height: calc(var(--loading-spinner-size) * 1.2);
     justify-content: center;
     max-height: 100%;
     max-width: 100%;
@@ -11,12 +11,12 @@
 
 :host::before {
     animation: loading 800ms infinite;
-    border-radius: var(--flux-loading-spinner-size);
-    border-top: var(--flux-loading-spinner-width) solid var(--flux-loading-spinner-color);
+    border-radius: var(--loading-spinner-size);
+    border-top: var(--loading-spinner-width) solid var(--loading-spinner-color);
     content: "";
     display: block;
-    height: var(--flux-loading-spinner-size);
-    width: var(--flux-loading-spinner-size);
+    height: var(--loading-spinner-size);
+    width: var(--loading-spinner-size);
 }
 
 @keyframes loading {

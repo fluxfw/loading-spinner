@@ -1,21 +1,21 @@
-import css from "./FluxLoadingSpinnerElement.css" with { type: "css" };
-import root_css from "./FluxLoadingSpinnerElementRoot.css" with { type: "css" };
+import css from "./LoadingSpinnerElement.css" with { type: "css" };
+import root_css from "./LoadingSpinnerElementRoot.css" with { type: "css" };
 
 /** @typedef {import("./StyleSheetManager/StyleSheetManager.mjs").StyleSheetManager} StyleSheetManager */
 
-export const FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX = "--flux-loading-spinner-";
+export const LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX = "--loading-spinner-";
 
-export class FluxLoadingSpinnerElement extends HTMLElement {
+export class LoadingSpinnerElement extends HTMLElement {
     /**
      * @param {StyleSheetManager | null} style_sheet_manager
-     * @returns {Promise<FluxLoadingSpinnerElement>}
+     * @returns {Promise<LoadingSpinnerElement>}
      */
     static async new(style_sheet_manager = null) {
         if (style_sheet_manager !== null) {
             await style_sheet_manager.generateVariablesRootStyleSheet(
-                FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX,
+                LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX,
                 {
-                    [`${FLUX_LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX}color`]: "accent-color"
+                    [`${LOADING_SPINNER_ELEMENT_VARIABLE_PREFIX}color`]: "accent-color"
                 },
                 true
             );
@@ -30,9 +30,9 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
             }
         }
 
-        const flux_loading_spinner_element = new this();
+        const loading_spinner_element = new this();
 
-        const shadow = flux_loading_spinner_element.attachShadow({
+        const shadow = loading_spinner_element.attachShadow({
             mode: "closed"
         });
 
@@ -42,7 +42,7 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
 
         shadow.adoptedStyleSheets.push(css);
 
-        return flux_loading_spinner_element;
+        return loading_spinner_element;
     }
 
     /**
@@ -53,6 +53,6 @@ export class FluxLoadingSpinnerElement extends HTMLElement {
     }
 }
 
-export const FLUX_LOADING_SPINNER_ELEMENT_TAG_NAME = "flux-loading-spinner";
+export const LOADING_SPINNER_ELEMENT_TAG_NAME = "loading-spinner";
 
-customElements.define(FLUX_LOADING_SPINNER_ELEMENT_TAG_NAME, FluxLoadingSpinnerElement);
+customElements.define(LOADING_SPINNER_ELEMENT_TAG_NAME, LoadingSpinnerElement);
